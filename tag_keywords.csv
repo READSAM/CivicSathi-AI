@@ -1,0 +1,141 @@
+Tag,Keyword
+pothole,pothole
+pothole,road crack
+pothole,broken road
+pothole,hole in road
+pothole,gadda
+pothole,gaddha
+pothole,khadda
+pothole,road damaged
+pothole,uneven road
+pothole,pit on road
+pothole,collapsed road
+garbage,garbage
+garbage,waste
+garbage,dumping
+garbage,trash
+garbage,litter
+garbage,plastic waste
+garbage,kooda
+garbage,rubbish
+garbage,refuse
+garbage,dump yard
+garbage,uncollected garbage
+garbage,filthy area
+water_leak,water leak
+water_leak,leakage
+water_leak,pipeline burst
+water_leak,broken pipe
+water_leak,sewer overflow
+water_leak,pipe leakage
+water_leak,water escaping
+water_leak,pani leak
+water_leak,burst pipeline
+water_shortage,water shortage
+water_shortage,no water
+water_shortage,pani problem
+water_shortage,supply cut
+water_shortage,insufficient water
+water_shortage,dry tap
+contaminated_water,dirty water
+contaminated_water,contaminated water
+contaminated_water,bad smell in water
+contaminated_water,unsafe drinking water
+contaminated_water,polluted water
+electric_pole,bijili
+electric_pole,bijli
+electric_pole,electric pole
+electric_pole,wires hanging
+electric_pole,power line
+electric_pole,messy pole
+electric_pole,exposed cables
+electric_pole,broken pole
+electric_pole,dangling wires
+electric_pole,bijli ka khamba
+electric_pole,faulty wiring
+electric_pole,sparking wires
+street_light,broken street light
+street_light,light not working
+street_light,dark street
+street_light,street lamp off
+street_light,no lighting
+street_light,bijli ka bulb kharab
+street_light,no street light at night
+power_outage,power cut
+power_outage,load shedding
+power_outage,no electricity
+power_outage,bijli chali gayi
+power_outage,intermittent power
+power_outage,faulty supply
+drainage,blocked drain
+drainage,drain overflow
+drainage,drainage issue
+drainage,ganda nala
+drainage,sewer blockage
+drainage,wastewater
+drainage,dirty drain
+drainage,clogged drain
+public_sanitation,open defecation
+public_sanitation,dirty area
+public_sanitation,toilet not working
+public_sanitation,poor hygiene
+public_sanitation,lack of toilets
+public_sanitation,shauchalay problem
+public_sanitation,nala overflow
+missing_signage,missing sign
+missing_signage,no traffic sign
+missing_signage,broken signboard
+missing_signage,road sign missing
+missing_signage,board damaged
+missing_signage,traffic signal issue
+public_safety,broken railing
+public_safety,unsafe area
+public_safety,accident prone spot
+public_safety,dangerous crossing
+public_safety,missing guardrails
+public_safety,ghatak jagah
+public_safety,traffic hazard
+dead_tree,dead tree
+dead_tree,fallen tree
+dead_tree,hazardous tree
+dead_tree,overgrown tree
+dead_tree,tree blocking road
+dead_tree,sukha ped
+dead_tree,marahua ped
+dead_tree,toot gaya ped
+park_maintenance,park dirty
+park_maintenance,overgrown grass
+park_maintenance,playground damaged
+park_maintenance,no benches
+park_maintenance,park neglected
+park_maintenance,bagicha problem
+park_maintenance,jungle jaisa park
+stray_animals,stray dog
+stray_animals,cattle on road
+stray_animals,animal attack
+stray_animals,loose animals
+stray_animals,awara kutta
+stray_animals,bail road par
+stray_animals,safety issue with animals
+air_pollution,smoke
+air_pollution,bad air
+air_pollution,pollution
+air_pollution,dhuaan
+air_pollution,air quality poor
+air_pollution,factory smoke
+air_pollution,chemical smell
+noise_pollution,loud noise
+noise_pollution,honking
+noise_pollution,construction noise
+noise_pollution,shor sharaba
+noise_pollution,noise problem
+traffic_jam,traffic jam
+traffic_jam,slow traffic
+traffic_jam,road blocked
+traffic_jam,bheed bhari sadak
+traffic_jam,congestion
+traffic_jam,heavy traffic
+missing_bus_stop,no bus stop
+missing_bus_stop,bus shelter missing
+missing_bus_stop,bus stand not available
+missing_bus_stop,bus waiting area broken
