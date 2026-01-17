@@ -74,7 +74,7 @@ class CivicClassifier:
 
             return {
                 "tag": predicted_tag,
-                "department": self.tag_to_dept.get(predicted_tag, "General Grievances Cell /Public Relations Office")
+                "department": self.tag_to_dept.get(predicted_tag, "General Grievances Cell /Public Relations Office"),
                 "confidence": round(confidence, 2),
                 "method": "transformer_model"
             }
