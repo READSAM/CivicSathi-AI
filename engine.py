@@ -46,7 +46,7 @@ def __init__(self):
             tag = first_match['tag']
             return {
                 "tag": tag,
-                "department": self.tag_to_dept.get(tag, "General Administration"),
+                "department": self.tag_to_dept.get(tag, "General Grievances Cell /Public Realtions Office"),
                 "confidence": 1.0,
                 "method": "keyword_match"
             }
@@ -68,15 +68,14 @@ def __init__(self):
 
             result = response.json()
             
-            # The router returns a list: [{'label': 'tag_name', 'score': 0.99}, ...]
-            # We take the top result
+
             top_prediction = result[0]
             predicted_tag = top_prediction['label']
             confidence = top_prediction['score']
 
             return {
                 "tag": predicted_tag,
-                "department": self.tag_to_dept.get(predicted_tag, "General Administration"),
+                "department": self.tag_to_dept.get(predicted_tag, "General Grievances Cell /Public Realtions Office")
                 "confidence": round(confidence, 2),
                 "method": "transformer_model"
             }
