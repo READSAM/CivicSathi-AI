@@ -16,16 +16,15 @@ async def analyze_issue(request: ReportRequest):
     try:
         analysis = ai_engine.tag_issue(request.description)
         
-        # Priority Logic: Still based on the predicted tag
-        priority = "Medium"
-        if analysis["confidence"] > 0.8:
-            if analysis["tag"] in ["public_safety", "water_leak", "power_outage"]:
-                priority = "High"
+        # # Priority Logic: Still based on the predicted tag
+        # priority = "Medium"
+        # if analysis["confidence"] > 0.8:
+        #     if analysis["tag"] in ["public_safety", "water_leak", "power_outage"]:
+        #         priority = "High"
         
         return {
             "tag": analysis["tag"],
             "department": analysis["department"],
-            "priority": priority,
             "confidence": analysis["confidence"]
         }
     except Exception as e:
