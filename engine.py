@@ -6,36 +6,26 @@ from fastapi import HTTPException
 
 class CivicClassifier:
     def __init__(self):
-        # 1. Load mappings from your CSV files
-        # Ensure these files are in your project root
         try:
             self.depts_df = pd.read_csv('tag_departments.csv')
             self.keywords_df = pd.read_csv('tag_keywords.csv')
         except Exception as e:
-            print(f"Error loading CSV files: {e}")
             raise RuntimeError("Required CSV mapping files are missing.")
 
-        # Create a lookup dictionary: { 'pothole': 'Public Works Department', ... }
         self.tag_to_dept = dict(zip(self.depts_df['Tag'], self.depts_df['Department']))
         
-        # Use unique tags as candidate labels for the AI model
+        # Use unique tags
         self.categories = self.depts_df['Tag'].unique().tolist()
         
-        # 2. Setup Hugging Face Router Configuration
-        # Note: Using the updated router URL as per HF infrastructure changes
+        #Setup Hugging Face Router Configuration
         self.api_url = "https://router.huggingface.co/hf-inference/models/facebook/bart-large-mnli"
         self.token = os.getenv("HF_TOKEN")
-        
-        if not self.token:
-            print("Warning: HF_TOKEN not found in environment variables.")
 
         self.headers = {"Authorization": f"Bearer {self.token}"}
 
     def tag_issue(self, description: str):
         desc_lower = description.lower()
 
-        # --- STEP 1: KEYWORD & HINGLISH CHECK ---
-        # We use regex to ensure we match whole words (e.g., 'pani' matches 'pani leak' but not 'panini')
         matches = []
         for _, row in self.keywords_df.iterrows():
             keyword = str(row['Keyword']).lower()
@@ -47,7 +37,7 @@ class CivicClassifier:
                 })
 
         if matches:
-            # If multiple keywords match, prioritize the one mentioned first in the sentence
+            #multiple tags use one which comes first
             first_match = sorted(matches, key=lambda x: x['pos'])[0]
             tag = first_match['tag']
             return {
@@ -56,14 +46,14 @@ class CivicClassifier:
                 "confidence": 1.0,
                 "method": "keyword_match"
             }
-
-        # --- STEP 2: AI FALLBACK (Hugging Face Router) ---
+        print('moving to AI');
+       #if not found in csb file use model
         payload = {
             "inputs": description,
             "parameters": {"candidate_labels": self.categories},
             "options": {"wait_for_model": True}
         }
-
+        
         try:
             response = requests.post(self.api_url, headers=self.headers, json=payload, timeout=10)
             
@@ -88,6 +78,6 @@ class CivicClassifier:
             }
 
         except Exception as e:
-            # Log the specific error for debugging during the hackathon
+            # Log the specific error
             print(f"AI Inference Failure: {e}")
             raise e
