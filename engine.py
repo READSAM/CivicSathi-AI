@@ -46,7 +46,7 @@ def __init__(self):
             tag = first_match['tag']
             return {
                 "tag": tag,
-                "department": self.tag_to_dept.get(tag, "General Grievances Cell /Public Realtions Office"),
+                "department": self.tag_to_dept.get(tag, "General Grievances Cell /Public Relations Office"),
                 "confidence": 1.0,
                 "method": "keyword_match"
             }
@@ -75,7 +75,7 @@ def __init__(self):
 
             return {
                 "tag": predicted_tag,
-                "department": self.tag_to_dept.get(predicted_tag, "General Grievances Cell /Public Realtions Office")
+                "department": self.tag_to_dept.get(predicted_tag, "General Grievances Cell /Public Relations Office")
                 "confidence": round(confidence, 2),
                 "method": "transformer_model"
             }
