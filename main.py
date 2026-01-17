@@ -32,17 +32,14 @@ async def analyze_issue(request: ReportRequest):
         print(f"DEBUG ERROR: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
-# Add this to your imports
 from fastapi import FastAPI, HTTPException
 
 app = FastAPI()
 
-# 1. Health check route (Required for Render and monitoring)
 @app.get("/health")
 async def health_check():
     return {"status": "healthy", "service": "civic-saathi-ai"}
 
-# 2. Root route (Helpful for quick browser testing)
 @app.get("/")
 async def root():
     return {"message": "Civic Saathi AI Service is live. Send POST requests to /analyze-issue"}
