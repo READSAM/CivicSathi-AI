@@ -6,7 +6,6 @@ from fastapi import HTTPException
 
 class CivicClassifier:
     def __init__(self):
-        try:
             # Load CSVs
             self.depts_df = pd.read_csv('tag_departments.csv')
             self.keywords_df = pd.read_csv('tag_keywords.csv')
