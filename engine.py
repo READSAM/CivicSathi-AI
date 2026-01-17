@@ -5,17 +5,21 @@ import pandas as pd
 from fastapi import HTTPException
 
 class CivicClassifier:
-    def __init__(self):
-        try:
-            self.depts_df = pd.read_csv('tag_departments.csv')
-            self.keywords_df = pd.read_csv('tag_keywords.csv')
-        except Exception as e:
-            raise RuntimeError("Required CSV mapping files are missing.")
+def __init__(self):
+    try:
+        # Load CSVs
+        self.depts_df = pd.read_csv('tag_departments.csv')
+        self.keywords_df = pd.read_csv('tag_keywords.csv')
 
-        self.tag_to_dept = dict(zip(self.depts_df['Tag'], self.depts_df['Department']))
+        self.tag_to_dept = {
+            str(k).lower().strip(): str(v).strip() 
+            for k, v in zip(self.depts_df['Tag'], self.depts_df['Department'])
+        }
+        # Lowercase the keywords for matching
+        self.keywords_df['Keyword'] = self.keywords_df['Keyword'].astype(str).str.lower().str.strip()
+        self.keywords_df['Tag'] = self.keywords_df['Tag'].astype(str).str.lower().str.strip()
         
-        # Use unique tags
-        self.categories = self.depts_df['Tag'].unique().tolist()
+        self.categories = [str(cat).lower().strip() for cat in self.depts_df['Tag'].unique()]
         
         #Setup Hugging Face Router Configuration
         self.api_url = "https://router.huggingface.co/hf-inference/models/facebook/bart-large-mnli"
