@@ -1,20 +1,20 @@
 Tag,Department
-pothole,Public Works Department
-garbage,Municipal Corporation
-water_leak,Water Supply & Sanitation
-water_shortage,Water Supply & Sanitation
+pothole,Public Works Department (PWD)
+garbage,Health & Sanitation Department
+water_leak,Water Supply & Sewarage Department
+water_shortage,Water Supply & Sewarage Department
 contaminated_water,Health & Sanitation Department
-electric_pole,Electricity Board
-street_light,Electricity Board
-power_outage,Electricity Board
-drainage,Public Works / Sanitation
-public_sanitation,Health Department
+electric_pole,Electricity Department
+street_light,Street Light Department
+power_outage,Electricity Department
+drainage,Water Supply & Sewarage Department
+public_sanitation,Health & Sanitation Department
 missing_signage,Transport Department
-public_safety,Police / Disaster Management
-dead_tree,Parks & Horticulture
-park_maintenance,Parks & Gardens Department
-stray_animals,Animal Control / Police
+public_safety,Town Planning Department
+dead_tree,Horticulture & Parks Department
+park_maintenance,Horticulture & Parks Department
+stray_animals,Animal Control & Veterinary Services
 air_pollution,Pollution Control Board
-noise_pollution,Urban Development / Traffic Police
-traffic_jam,Transport Department / Traffic Police
-missing_bus_stop,Transport Department
+noise_pollution,Town Planning Department
+traffic_jam,Transport Department (RTO)
+missing_bus_stop,Transport Department (RTO)
